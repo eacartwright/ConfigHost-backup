@@ -4,7 +4,7 @@ ConfigHost.ps1
 Process
 ----------------------------------------------------------------
 
-1. Reference OS media is sourced using the `HeiDoc.net Windows ISO Downloader`, an easy-to-use frontend to retrieve OEM ISOs once supplied to the *Media Creation Tool* each feature update which remain on Microsoft's CDN but are near impossible to access directly.
+1. Reference OS media is sourced using either Microsoft VL or the `HeiDoc.net Windows ISO Downloader`, an easy-to-use frontend to retrieve OEM ISOs once supplied to the *Media Creation Tool* each feature update which remain on Microsoft's CDN but are near impossible to access directly.
 
 2. The OS is serviced offline using the `OSDBuilder` PowerShell module, greatly simplifying DISM to apply necessary updates and .NET 3.5 support, precluding need for manual sysprep/capture. This also prevents the reference image from ever being network-connected or otherwise "tainted".
 
