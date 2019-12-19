@@ -1,0 +1,4 @@
+1. $Settings - Add function-variable name to $Settings to be instantiated
+2. UpdateForm - Add check state of function variables to update GUI element in UpdateForm
+3. ApplyForm - Add check state of GUI elements to call respective functions
+4. ExportIniFile - Add check state of GUI elements to set function-variable value before export

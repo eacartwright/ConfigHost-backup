@@ -1,0 +1,41 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20191206201733
+Username: NWPHOEVANPC\Evan
+RunAs User: NWPHOEVANPC\Evan
+Configuration Name: 
+Machine: NWPHOEVANPC (Microsoft Windows NT 10.0.18362.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.11.0\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2019.11.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.11.0\modules' -EnableConsoleRepl -LogLevel 'Normal' -LogPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.11.0\logs\1575641201-b3bcbe32-23c3-4d1c-b565-3d7aef8c475c1575641198122\EditorServices.log' -SessionDetailsPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.11.0\sessions\PSES-VSCode-12224-128282' -FeatureFlags @('PSReadLine')
+Process ID: 12744
+PSVersion: 5.1.18362.145
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.145
+BuildVersion: 10.0.18362.145
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+2: Error message
+At C:\Dev\Projects\ConfigHost\ConfigHost\test.ps1:20 char:1
++ $form.ShowDialog()
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+2: Error message
+At C:\Dev\Projects\ConfigHost\ConfigHost\test.ps1:20 char:1
++ $form.ShowDialog()
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
+
+WARNING: 3: Warning message
+VERBOSE: 4: Verbose message
+DEBUG: 5: Debug message
+INFO: 6: Information message
+Host message
+Cancel
+**********************
+Windows PowerShell transcript end
+End time: 20191206201739
+**********************

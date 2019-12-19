@@ -1,3 +1,4 @@
+function Function {
     param (
         $mode
     )
@@ -25,3 +26,4 @@
             return $FunctionVariable
         }
     }
+}
