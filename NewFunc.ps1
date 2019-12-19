@@ -14,7 +14,7 @@ function Function {
 
         }
         '?' {
-            switch (().Data) {
+            switch ((Get-ItemPropertyValue $source).Data) {
                 1 {
                     $script:FunctionVariable = 1
                 }
