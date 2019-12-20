@@ -225,7 +225,7 @@ function DisableAutoUpdate {
 # Lock Windows Update UI access (GPO) *Does not persist?
 function LockWindowsUpdate {
     param (
-        $mode
+        $model
     )
     
     $source = "[$($MyInvocation.MyCommand)]"
