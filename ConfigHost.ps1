@@ -231,7 +231,7 @@ function LockWindowsUpdate {
     $source = "[$($MyInvocation.MyCommand)]"
     LogMessage 6 $source $mode
 
-    switch ($mode) {
+    switch ($model) {
         0 {
             Remove-PolicyFileEntry -Path $ComputerPolicy -Key 'SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' -ValueName 'SetDisableUXWUAccess' -ErrorAction SilentlyContinue
         }
