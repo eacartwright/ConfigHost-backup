@@ -1,4 +1,4 @@
-﻿
+
 ###############################################################
 ###  Utility
 ###############################################################
@@ -1808,16 +1808,6 @@ function DisableOfficeProtectedView {
         }
     }
 
-}
-
-# Load Classic Shell settings
-function LoadClassicShellSettings {
-    if (Test-Path "$env:ProgramFiles\Classic Shell") {
-        Write-Information "($($MyInvocation.MyCommand)) Loading Classic Shell settings..."
-        Start-Process "$env:ProgramFiles\Classic Shell\ClassicStartMenu.exe" -ArgumentList "-xml `"$env:ALLUSERSPROFILE\ClassicShell\Menu Settings.xml`"" -Wait
-        Start-Process "$env:ProgramFiles\Classic Shell\ClassicStartMenu.exe" -ArgumentList "-exit" -Wait
-        Start-Process "$env:ProgramFiles\Classic Shell\ClassicStartMenu.exe" -Wait
-    }
 }
 
 # Disable Citrix new account popup
