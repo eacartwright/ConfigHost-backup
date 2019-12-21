@@ -1743,14 +1743,13 @@ function DisableIENewEdgeTab {
 
     switch ($mode) {
         0 {
-            Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main' -Name 'HideNewEdgeButton' -Type DWord -Value 0
+            Remove-PolicyFileEntry -Path $ComputerPolicy -Key 'SOFTWARE\Policies\Microsoft\Internet Explorer\Main' -ValueName 'HideNewEdgeButton'
         }
         1 {
-            Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main' -Name 'HideNewEdgeButton' -Type DWord -Value 1
+            Set-PolicyFileEntry -Path $ComputerPolicy -Key 'SOFTWARE\Policies\Microsoft\Internet Explorer\Main' -ValueName 'HideNewEdgeButton' -Type DWord -Data 1
         }
         '?' {
-            Test-Path -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main'
-            switch (Get-ItemPropertyValue -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main' -Name 'HideNewEdgeButton' -ErrorAction SilentlyContinue) {
+            switch ((Get-PolicyFileEntry -Path $ComputerPolicy -Key 'SOFTWARE\Policies\Microsoft\Internet Explorer\Main' -ValueName 'HideNewEdgeButton').Data) {
                 1 {
                     $script:DisableIENewEdgeTab = 1
                 }
