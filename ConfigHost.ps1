@@ -1,4 +1,4 @@
-
+﻿
 ###############################################################
 ###  Utility
 ###############################################################
@@ -1094,7 +1094,7 @@ function SetIENewTab {
 
 # Close apps if they're open
 function CloseApps {
-    $apps = @("MicrosoftEdge","ConfigurationWizard")
+    $apps = @('MicrosoftEdge','ConfigurationWizard')
     foreach ($app in $apps) {
         if (Get-Process -Name $app -ErrorAction SilentlyContinue) {
             Write-Information "($($MyInvocation.MyCommand)) Closing apps ($app)..."
@@ -1810,13 +1810,43 @@ function DisableOfficeProtectedView {
 
 }
 
-# Disable Citrix new account popup
+# Disable Citrix Receiver new account popup
 function DisableCitrixPopup {
-    Write-Information "($($MyInvocation.MyCommand)) Disabling Citrix new account popup..."
-    if (!(Test-Path "HKCU:\Software\Citrix\Receiver")) {
-        New-Item -Path "HKCU:\Software\Citrix\Receiver" -Force | Out-Null
+    param (
+        $mode
+    )
+
+    $source = "[$($MyInvocation.MyCommand)]"
+    LogMessage 6 $source $mode
+
+    if (Test-Path 'C:\Program Files (x86)\Citrix\ICA Client\Receiver\Receiver.exe') {
+        switch ($mode) {
+            0 {
+                Remove-ItemProperty -Path 'HKCU:\Software\Citrix\Receiver' -Name 'HideAddAccountOnRestart' -Type DWord -Value 1
+            }
+            1 {
+                if (!(Test-Path 'HKCU:\Software\Citrix\Receiver')) {
+                    New-Item -Path 'HKCU:\Software\Citrix\Receiver' -Force | Out-Null
+                }
+                Set-ItemProperty -Path 'HKCU:\Software\Citrix\Receiver' -Name 'HideAddAccountOnRestart' -Type DWord -Value 1
+            }
+            '?' {
+                switch (Get-ItemPropertyValue -Path 'HKCU:\Software\Citrix\Receiver' -Name 'HideAddAccountOnRestart') {
+                    1 {
+                        $script:DisableCitrixPopup = 1
+                    }
+                    default {
+                        $script:DisableCitrixPopup = 0
+                    }
+                }
+                LogMessage 6 $source $DisableCitrixPopup
+                return $DisableCitrixPopup
+            }
+        }
     }
-    Set-ItemProperty -Path "HKCU:\Software\Citrix\Receiver" -Name "HideAddAccountOnRestart" -Value 1 -Type DWord
+    else {
+        LogMessage 6 $source 'Program not found.'
+    }
 }
 
 # Add custom shortcuts
