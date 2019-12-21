@@ -1749,7 +1749,8 @@ function DisableIENewEdgeTab {
             Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main' -Name 'HideNewEdgeButton' -Type DWord -Value 1
         }
         '?' {
-            switch (Get-ItemPropertyValue -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main' -Name 'HideNewEdgeButton') {
+            Test-Path -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main'
+            switch (Get-ItemPropertyValue -Path 'HKCU:\Software\Microsoft\Internet Explorer\Main' -Name 'HideNewEdgeButton' -ErrorAction SilentlyContinue) {
                 1 {
                     $script:DisableIENewEdgeTab = 1
                 }
