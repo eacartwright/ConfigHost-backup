@@ -1,12 +1,12 @@
 ﻿**********************
 Windows PowerShell transcript start
-Start time: 20191221005753
+Start time: 20191221184110
 Username: GANESH\Evan
 RunAs User: GANESH\Evan
 Configuration Name: 
 Machine: GANESH (Microsoft Windows NT 10.0.17134.0)
-Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2019.12.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\modules' -EnableConsoleRepl -LogLevel 'Normal' -LogPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\logs\1576906300-9b5ac26b-593c-46d8-85eb-fab5c51470c21576906298601\EditorServices.log' -SessionDetailsPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\sessions\PSES-VSCode-15168-478865' -FeatureFlags @('PSReadLine')
-Process ID: 15260
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2019.12.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\modules' -EnableConsoleRepl -LogLevel 'Normal' -LogPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\logs\1576968057-b62aeb9f-4b26-451a-b0d3-e23a934b168f1576968055661\EditorServices.log' -SessionDetailsPath 'c:\Users\Evan\.vscode\extensions\ms-vscode.powershell-2019.12.0\sessions\PSES-VSCode-18948-462943' -FeatureFlags @('PSReadLine')
+Process ID: 23012
 PSVersion: 5.1.17134.765
 PSEdition: Desktop
 PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
@@ -17,50 +17,50 @@ PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
 Transcript started, output file is C:\Dev\ConfigHost\Logs\ConfigHost.log
-INFO: [2019-12-21T00:57:53] [RunMain] -gui
-INFO: [2019-12-21T00:57:53] [RunGui]
-INFO: [2019-12-21T00:57:53] [GetLiveState]
-INFO: [2019-12-21T00:57:53] [ComputerLabel] ?
-INFO: [2019-12-21T00:57:53] [ComputerLabel] This PC
-INFO: [2019-12-21T00:57:53] [LockWindowsUpdate] ?
-INFO: [2019-12-21T00:57:53] [LockWindowsUpdate] 0
-INFO: [2019-12-21T00:57:53] [DisableDefender] ?
-INFO: [2019-12-21T00:57:53] [DisableDefender] 0
-INFO: [2019-12-21T00:57:53] [DisableSmartScreen] ?
-INFO: [2019-12-21T00:57:53] [DisableSmartScreen] 0
-INFO: [2019-12-21T00:57:53] [DisableUACPrompt] ?
-INFO: [2019-12-21T00:57:53] [DisableUACPrompt] 1
-INFO: [2019-12-21T00:57:53] [DisableIEPasswordAutoComplete] ?
-INFO: [2019-12-21T00:57:53] [DisableIEPasswordAutoComplete] 0
-INFO: [2019-12-21T00:57:53] [DisableIEPopupMgmt] ?
-INFO: [2019-12-21T00:57:53] [DisableIEPopupMgmt] 0
-INFO: [2019-12-21T00:57:53] [DisableIEFirstRunWizard] ?
-INFO: [2019-12-21T00:57:53] [DisableIEFirstRunWizard] 0
-INFO: [2019-12-21T00:57:53] [DisableIESuggestedSites] ?
-INFO: [2019-12-21T00:57:53] [DisableIESuggestedSites] 0
-INFO: [2019-12-21T00:57:53] [DisableIESmileyButton] ?
-INFO: [2019-12-21T00:57:53] [DisableIESmileyButton] 0
-INFO: [2019-12-21T00:57:53] [HidePeople] ?
-INFO: [2019-12-21T00:57:53] [HidePeople] 1
-INFO: [2019-12-21T00:57:53] [HideTaskView] ?
-INFO: [2019-12-21T00:57:53] [HideTaskView] 1
-INFO: [2019-12-21T00:57:53] [ControlPanelView] ?
-INFO: [2019-12-21T00:57:53] [ControlPanelView] 1
-INFO: [2019-12-21T00:57:53] [RemoveFaxPrinter] ?
-INFO: [2019-12-21T00:57:53] [RemoveFaxPrinter] 1
-INFO: [2019-12-21T00:57:53] [DisableIENewEdgeTab] ?
-INFO: [2019-12-21T00:57:53] [DisableIENewEdgeTab] 0
-INFO: [2019-12-21T00:57:53] [ShowIEMenuBar] ?
-INFO: [2019-12-21T00:57:53] [ShowIEMenuBar] 1
-INFO: [2019-12-21T00:57:53] [ShowIEFavoritesBar] ?
-INFO: [2019-12-21T00:57:53] [ShowIEFavoritesBar] 1
-INFO: [2019-12-21T00:57:53] [ShowIEStatusBar] ?
-INFO: [2019-12-21T00:57:53] [ShowIEStatusBar] 1
-INFO: [2019-12-21T00:57:53] [LockIEToolbars] ?
-INFO: [2019-12-21T00:57:53] [LockIEToolbars] 1
-INFO: [2019-12-21T00:57:53] [UpdateForm]
+INFO: [2019-12-21T18:41:10] [RunMain] -gui
+INFO: [2019-12-21T18:41:10] [RunGui]
+INFO: [2019-12-21T18:41:11] [GetLiveState]
+INFO: [2019-12-21T18:41:11] [ComputerLabel] ?
+INFO: [2019-12-21T18:41:11] [ComputerLabel] This PC
+INFO: [2019-12-21T18:41:11] [LockWindowsUpdate] ?
+INFO: [2019-12-21T18:41:11] [LockWindowsUpdate] 0
+INFO: [2019-12-21T18:41:11] [DisableDefender] ?
+INFO: [2019-12-21T18:41:11] [DisableDefender] 0
+INFO: [2019-12-21T18:41:11] [DisableSmartScreen] ?
+INFO: [2019-12-21T18:41:11] [DisableSmartScreen] 0
+INFO: [2019-12-21T18:41:11] [DisableUACPrompt] ?
+INFO: [2019-12-21T18:41:11] [DisableUACPrompt] 1
+INFO: [2019-12-21T18:41:11] [DisableIEPasswordAutoComplete] ?
+INFO: [2019-12-21T18:41:11] [DisableIEPasswordAutoComplete] 0
+INFO: [2019-12-21T18:41:11] [DisableIEPopupMgmt] ?
+INFO: [2019-12-21T18:41:11] [DisableIEPopupMgmt] 0
+INFO: [2019-12-21T18:41:11] [DisableIEFirstRunWizard] ?
+INFO: [2019-12-21T18:41:11] [DisableIEFirstRunWizard] 0
+INFO: [2019-12-21T18:41:11] [DisableIESuggestedSites] ?
+INFO: [2019-12-21T18:41:11] [DisableIESuggestedSites] 0
+INFO: [2019-12-21T18:41:11] [DisableIESmileyButton] ?
+INFO: [2019-12-21T18:41:11] [DisableIESmileyButton] 0
+INFO: [2019-12-21T18:41:11] [HidePeople] ?
+INFO: [2019-12-21T18:41:11] [HidePeople] 1
+INFO: [2019-12-21T18:41:11] [HideTaskView] ?
+INFO: [2019-12-21T18:41:11] [HideTaskView] 1
+INFO: [2019-12-21T18:41:11] [ControlPanelView] ?
+INFO: [2019-12-21T18:41:11] [ControlPanelView] 1
+INFO: [2019-12-21T18:41:11] [RemoveFaxPrinter] ?
+INFO: [2019-12-21T18:41:12] [RemoveFaxPrinter] 1
+INFO: [2019-12-21T18:41:12] [DisableIENewEdgeTab] ?
+INFO: [2019-12-21T18:41:12] [DisableIENewEdgeTab] 0
+INFO: [2019-12-21T18:41:12] [ShowIEMenuBar] ?
+INFO: [2019-12-21T18:41:12] [ShowIEMenuBar] 1
+INFO: [2019-12-21T18:41:12] [ShowIEFavoritesBar] ?
+INFO: [2019-12-21T18:41:12] [ShowIEFavoritesBar] 1
+INFO: [2019-12-21T18:41:12] [ShowIEStatusBar] ?
+INFO: [2019-12-21T18:41:12] [ShowIEStatusBar] 1
+INFO: [2019-12-21T18:41:12] [LockIEToolbars] ?
+INFO: [2019-12-21T18:41:12] [LockIEToolbars] 1
+INFO: [2019-12-21T18:41:12] [UpdateForm]
 Cancel
 **********************
 Windows PowerShell transcript end
-End time: 20191221005754
+End time: 20191221190625
 **********************

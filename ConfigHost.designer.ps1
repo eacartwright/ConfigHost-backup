@@ -18,20 +18,12 @@ $frmMain = New-Object -TypeName System.Windows.Forms.Form
 [System.Windows.Forms.ToolStripMenuItem]$openScriptToolStripMenuItem = $null
 [System.Windows.Forms.TabPage]$tabWebBrowser = $null
 [System.Windows.Forms.TabPage]$tabNetworking = $null
-[System.Windows.Forms.TabPage]$tabSecurity = $null
-[System.Windows.Forms.TabPage]$tabWindows = $null
 [System.Windows.Forms.GroupBox]$groupBox2 = $null
 [System.Windows.Forms.ComboBox]$cmbComputerLabel = $null
 [System.Windows.Forms.Label]$lblComputerLabel = $null
-[System.Windows.Forms.ComboBox]$cmbControlPanelView = $null
-[System.Windows.Forms.Label]$lblControlPanelView = $null
 [System.Windows.Forms.GroupBox]$groupBox1 = $null
-[System.Windows.Forms.CheckBox]$chkDisableDefender = $null
-[System.Windows.Forms.CheckBox]$chkDisableUACPrompt = $null
-[System.Windows.Forms.CheckBox]$chkLockWindowsUpdate = $null
 [System.Windows.Forms.CheckBox]$chkHideTaskView = $null
 [System.Windows.Forms.CheckBox]$chkHidePeople = $null
-[System.Windows.Forms.CheckBox]$chkDisableSmartScreen = $null
 [System.Windows.Forms.TabControl]$tabControl = $null
 [System.Windows.Forms.GroupBox]$gbxInternetExplorer = $null
 [System.Windows.Forms.GroupBox]$gbxChrome = $null
@@ -43,10 +35,7 @@ $frmMain = New-Object -TypeName System.Windows.Forms.Form
 [System.Windows.Forms.Label]$lblComputerName = $null
 [System.Windows.Forms.TextBox]$tbxComputerName = $null
 [System.Windows.Forms.Label]$label1 = $null
-[System.Windows.Forms.CheckBox]$checkBox4 = $null
-[System.Windows.Forms.CheckBox]$checkBox3 = $null
 [System.Windows.Forms.CheckBox]$checkBox2 = $null
-[System.Windows.Forms.CheckBox]$checkBox1 = $null
 [System.Windows.Forms.Label]$label2 = $null
 [System.Windows.Forms.CheckBox]$chkDisableIEPasswordAutoComplete = $null
 [System.Windows.Forms.CheckBox]$chkDisableIEFirstRunWizard = $null
@@ -61,6 +50,23 @@ $frmMain = New-Object -TypeName System.Windows.Forms.Form
 [System.Windows.Forms.GroupBox]$gbxLockWindowsUpdate = $null
 [System.Windows.Forms.RadioButton]$rdoUnlockWindowsUpdate = $null
 [System.Windows.Forms.RadioButton]$rdoLockWindowsUpdate = $null
+[System.Windows.Forms.TabPage]$tabShellUI = $null
+[System.Windows.Forms.TabPage]$tabSystem = $null
+[System.Windows.Forms.GroupBox]$gbxDesktop = $null
+[System.Windows.Forms.CheckBox]$chkShowRecycleBinOnDesktop = $null
+[System.Windows.Forms.CheckBox]$chkShowUserFolderOnDesktop = $null
+[System.Windows.Forms.CheckBox]$chkShowComputerOnDesktop = $null
+[System.Windows.Forms.GroupBox]$gbxExplorer = $null
+[System.Windows.Forms.ComboBox]$cmbControlPanelView = $null
+[System.Windows.Forms.Label]$lblControlPanelView = $null
+[System.Windows.Forms.CheckBox]$chkClearTaskbarPins = $null
+[System.Windows.Forms.CheckBox]$chkLockWindowsUpdate = $null
+[System.Windows.Forms.CheckBox]$checkBox3 = $null
+[System.Windows.Forms.CheckBox]$checkBox1 = $null
+[System.Windows.Forms.CheckBox]$checkBox4 = $null
+[System.Windows.Forms.CheckBox]$chkDisableUACPrompt = $null
+[System.Windows.Forms.CheckBox]$chkDisableSmartScreen = $null
+[System.Windows.Forms.CheckBox]$chkDisableDefender = $null
 [System.Windows.Forms.ToolStripSeparator]$toolStripSeparator3 = $null
 function InitializeComponent
 {
@@ -98,24 +104,14 @@ $chkShowIEFavoritesBar = (New-Object -TypeName System.Windows.Forms.CheckBox)
 $chkShowIEMenuBar = (New-Object -TypeName System.Windows.Forms.CheckBox)
 $chkDisableIEPopupMgmt = (New-Object -TypeName System.Windows.Forms.CheckBox)
 $tabNetworking = (New-Object -TypeName System.Windows.Forms.TabPage)
-$tabSecurity = (New-Object -TypeName System.Windows.Forms.TabPage)
-$tabWindows = (New-Object -TypeName System.Windows.Forms.TabPage)
+$tabShellUI = (New-Object -TypeName System.Windows.Forms.TabPage)
 $groupBox2 = (New-Object -TypeName System.Windows.Forms.GroupBox)
 $cmbComputerLabel = (New-Object -TypeName System.Windows.Forms.ComboBox)
 $lblComputerLabel = (New-Object -TypeName System.Windows.Forms.Label)
-$chkLockWindowsUpdate = (New-Object -TypeName System.Windows.Forms.CheckBox)
 $groupBox1 = (New-Object -TypeName System.Windows.Forms.GroupBox)
-$checkBox4 = (New-Object -TypeName System.Windows.Forms.CheckBox)
-$checkBox3 = (New-Object -TypeName System.Windows.Forms.CheckBox)
 $checkBox2 = (New-Object -TypeName System.Windows.Forms.CheckBox)
-$checkBox1 = (New-Object -TypeName System.Windows.Forms.CheckBox)
-$chkDisableDefender = (New-Object -TypeName System.Windows.Forms.CheckBox)
-$chkDisableUACPrompt = (New-Object -TypeName System.Windows.Forms.CheckBox)
-$cmbControlPanelView = (New-Object -TypeName System.Windows.Forms.ComboBox)
 $chkHideTaskView = (New-Object -TypeName System.Windows.Forms.CheckBox)
-$lblControlPanelView = (New-Object -TypeName System.Windows.Forms.Label)
 $chkHidePeople = (New-Object -TypeName System.Windows.Forms.CheckBox)
-$chkDisableSmartScreen = (New-Object -TypeName System.Windows.Forms.CheckBox)
 $tabControl = (New-Object -TypeName System.Windows.Forms.TabControl)
 $tabComputer = (New-Object -TypeName System.Windows.Forms.TabPage)
 $gbxLockWindowsUpdate = (New-Object -TypeName System.Windows.Forms.GroupBox)
@@ -125,16 +121,34 @@ $lblWorkgroup = (New-Object -TypeName System.Windows.Forms.Label)
 $textBox1 = (New-Object -TypeName System.Windows.Forms.TextBox)
 $lblComputerName = (New-Object -TypeName System.Windows.Forms.Label)
 $tbxComputerName = (New-Object -TypeName System.Windows.Forms.TextBox)
+$tabSystem = (New-Object -TypeName System.Windows.Forms.TabPage)
+$chkDisableUACPrompt = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$chkDisableSmartScreen = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$chkDisableDefender = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$checkBox4 = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$checkBox1 = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$checkBox3 = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$cmbControlPanelView = (New-Object -TypeName System.Windows.Forms.ComboBox)
+$lblControlPanelView = (New-Object -TypeName System.Windows.Forms.Label)
+$chkLockWindowsUpdate = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$gbxExplorer = (New-Object -TypeName System.Windows.Forms.GroupBox)
+$gbxDesktop = (New-Object -TypeName System.Windows.Forms.GroupBox)
+$chkShowComputerOnDesktop = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$chkShowUserFolderOnDesktop = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$chkShowRecycleBinOnDesktop = (New-Object -TypeName System.Windows.Forms.CheckBox)
+$chkClearTaskbarPins = (New-Object -TypeName System.Windows.Forms.CheckBox)
 $menuStrip1.SuspendLayout()
 $tabWebBrowser.SuspendLayout()
 $gbxEdge.SuspendLayout()
 $gbxInternetExplorer.SuspendLayout()
-$tabWindows.SuspendLayout()
-$groupBox2.SuspendLayout()
+$tabShellUI.SuspendLayout()
 $groupBox1.SuspendLayout()
 $tabControl.SuspendLayout()
 $tabComputer.SuspendLayout()
 $gbxLockWindowsUpdate.SuspendLayout()
+$tabSystem.SuspendLayout()
+$gbxExplorer.SuspendLayout()
+$gbxDesktop.SuspendLayout()
 $frmMain.SuspendLayout()
 #
 #btnApply
@@ -440,110 +454,63 @@ $tabNetworking.TabIndex = [System.Int32]3
 $tabNetworking.Text = [System.String]'Networking'
 $tabNetworking.UseVisualStyleBackColor = $true
 #
-#tabSecurity
+#tabShellUI
 #
-$tabSecurity.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]4,[System.Int32]22))
-$tabSecurity.Name = [System.String]'tabSecurity'
-$tabSecurity.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]537,[System.Int32]436))
-$tabSecurity.TabIndex = [System.Int32]2
-$tabSecurity.Text = [System.String]'Security'
-$tabSecurity.UseVisualStyleBackColor = $true
-#
-#tabWindows
-#
-$tabWindows.Controls.Add($groupBox2)
-$tabWindows.Controls.Add($groupBox1)
-$tabWindows.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]4,[System.Int32]22))
-$tabWindows.Name = [System.String]'tabWindows'
-$tabWindows.Padding = (New-Object -TypeName System.Windows.Forms.Padding -ArgumentList @([System.Int32]3))
-$tabWindows.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]537,[System.Int32]436))
-$tabWindows.TabIndex = [System.Int32]0
-$tabWindows.Text = [System.String]'Windows'
-$tabWindows.UseVisualStyleBackColor = $true
+$tabShellUI.Controls.Add($gbxDesktop)
+$tabShellUI.Controls.Add($gbxExplorer)
+$tabShellUI.Controls.Add($groupBox2)
+$tabShellUI.Controls.Add($groupBox1)
+$tabShellUI.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]4,[System.Int32]22))
+$tabShellUI.Name = [System.String]'tabShellUI'
+$tabShellUI.Padding = (New-Object -TypeName System.Windows.Forms.Padding -ArgumentList @([System.Int32]3))
+$tabShellUI.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]537,[System.Int32]436))
+$tabShellUI.TabIndex = [System.Int32]0
+$tabShellUI.Text = [System.String]'Shell UI'
+$tabShellUI.UseVisualStyleBackColor = $true
 #
 #groupBox2
 #
-$groupBox2.Controls.Add($cmbComputerLabel)
-$groupBox2.Controls.Add($lblComputerLabel)
-$groupBox2.Controls.Add($chkLockWindowsUpdate)
-$groupBox2.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]241))
+$groupBox2.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]217))
 $groupBox2.Name = [System.String]'groupBox2'
-$groupBox2.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]525,[System.Int32]189))
+$groupBox2.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]525,[System.Int32]78))
 $groupBox2.TabIndex = [System.Int32]19
 $groupBox2.TabStop = $false
-$groupBox2.Text = [System.String]'groupBox2'
+$groupBox2.Text = [System.String]'Start Menu'
 #
 #cmbComputerLabel
 #
 $cmbComputerLabel.FormattingEnabled = $true
 $cmbComputerLabel.Items.AddRange([System.Object[]]@([System.String]'This PC',[System.String]'Computer %COMPUTERNAME%',[System.String]'%COMPUTERNAME%',[System.String]'%USERNAME% on %COMPUTERNAME%'))
-$cmbComputerLabel.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]115,[System.Int32]53))
+$cmbComputerLabel.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]116,[System.Int32]28))
 $cmbComputerLabel.Name = [System.String]'cmbComputerLabel'
 $cmbComputerLabel.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]217,[System.Int32]21))
 $cmbComputerLabel.TabIndex = [System.Int32]15
 #
 #lblComputerLabel
 #
-$lblComputerLabel.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]8,[System.Int32]53))
+$lblComputerLabel.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]9,[System.Int32]28))
 $lblComputerLabel.Name = [System.String]'lblComputerLabel'
 $lblComputerLabel.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]87,[System.Int32]17))
 $lblComputerLabel.TabIndex = [System.Int32]13
 $lblComputerLabel.Text = [System.String]'Computer label:'
 $lblComputerLabel.TextAlign = [System.Drawing.ContentAlignment]::MiddleLeft
 #
-#chkLockWindowsUpdate
-#
-$chkLockWindowsUpdate.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]11,[System.Int32]96))
-$chkLockWindowsUpdate.Name = [System.String]'chkLockWindowsUpdate'
-$chkLockWindowsUpdate.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]136,[System.Int32]17))
-$chkLockWindowsUpdate.TabIndex = [System.Int32]6
-$chkLockWindowsUpdate.Text = [System.String]'Lock Windows Update'
-$chkLockWindowsUpdate.UseCompatibleTextRendering = $true
-$chkLockWindowsUpdate.UseVisualStyleBackColor = $true
-#
 #groupBox1
 #
-$groupBox1.Controls.Add($checkBox4)
-$groupBox1.Controls.Add($checkBox3)
+$groupBox1.Controls.Add($chkClearTaskbarPins)
 $groupBox1.Controls.Add($checkBox2)
-$groupBox1.Controls.Add($checkBox1)
-$groupBox1.Controls.Add($chkDisableDefender)
-$groupBox1.Controls.Add($chkDisableUACPrompt)
-$groupBox1.Controls.Add($cmbControlPanelView)
 $groupBox1.Controls.Add($chkHideTaskView)
-$groupBox1.Controls.Add($lblControlPanelView)
 $groupBox1.Controls.Add($chkHidePeople)
-$groupBox1.Controls.Add($chkDisableSmartScreen)
-$groupBox1.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]9))
+$groupBox1.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]105))
 $groupBox1.Name = [System.String]'groupBox1'
-$groupBox1.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]525,[System.Int32]226))
+$groupBox1.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]525,[System.Int32]101))
 $groupBox1.TabIndex = [System.Int32]18
 $groupBox1.TabStop = $false
-$groupBox1.Text = [System.String]'groupBox1'
-#
-#checkBox4
-#
-$checkBox4.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]182,[System.Int32]82))
-$checkBox4.Name = [System.String]'checkBox4'
-$checkBox4.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
-$checkBox4.TabIndex = [System.Int32]21
-$checkBox4.Text = [System.String]'Disable private firewall'
-$checkBox4.UseCompatibleTextRendering = $true
-$checkBox4.UseVisualStyleBackColor = $true
-#
-#checkBox3
-#
-$checkBox3.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]182,[System.Int32]151))
-$checkBox3.Name = [System.String]'checkBox3'
-$checkBox3.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]290,[System.Int32]17))
-$checkBox3.TabIndex = [System.Int32]20
-$checkBox3.Text = [System.String]'Disable automatic network-connected device setup'
-$checkBox3.UseCompatibleTextRendering = $true
-$checkBox3.UseVisualStyleBackColor = $true
+$groupBox1.Text = [System.String]'Taskbar'
 #
 #checkBox2
 #
-$checkBox2.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]182,[System.Int32]128))
+$checkBox2.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]66))
 $checkBox2.Name = [System.String]'checkBox2'
 $checkBox2.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
 $checkBox2.TabIndex = [System.Int32]19
@@ -551,48 +518,9 @@ $checkBox2.Text = [System.String]'Disable Web Search'
 $checkBox2.UseCompatibleTextRendering = $true
 $checkBox2.UseVisualStyleBackColor = $true
 #
-#checkBox1
-#
-$checkBox1.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]182,[System.Int32]105))
-$checkBox1.Name = [System.String]'checkBox1'
-$checkBox1.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
-$checkBox1.TabIndex = [System.Int32]18
-$checkBox1.Text = [System.String]'Disable Cortana'
-$checkBox1.UseCompatibleTextRendering = $true
-$checkBox1.UseVisualStyleBackColor = $true
-#
-#chkDisableDefender
-#
-$chkDisableDefender.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]111))
-$chkDisableDefender.Name = [System.String]'chkDisableDefender'
-$chkDisableDefender.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
-$chkDisableDefender.TabIndex = [System.Int32]7
-$chkDisableDefender.Text = [System.String]'Disable Defender'
-$chkDisableDefender.UseCompatibleTextRendering = $true
-$chkDisableDefender.UseVisualStyleBackColor = $true
-#
-#chkDisableUACPrompt
-#
-$chkDisableUACPrompt.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]157))
-$chkDisableUACPrompt.Name = [System.String]'chkDisableUACPrompt'
-$chkDisableUACPrompt.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
-$chkDisableUACPrompt.TabIndex = [System.Int32]17
-$chkDisableUACPrompt.Text = [System.String]'Disable UAC prompts'
-$chkDisableUACPrompt.UseCompatibleTextRendering = $true
-$chkDisableUACPrompt.UseVisualStyleBackColor = $true
-#
-#cmbControlPanelView
-#
-$cmbControlPanelView.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
-$cmbControlPanelView.FormattingEnabled = $true
-$cmbControlPanelView.Items.AddRange([System.Object[]]@([System.String]'Large icons',[System.String]'Small icons'))
-$cmbControlPanelView.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]116,[System.Int32]199))
-$cmbControlPanelView.Name = [System.String]'cmbControlPanelView'
-$cmbControlPanelView.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]216,[System.Int32]21))
-$cmbControlPanelView.TabIndex = [System.Int32]8
-#
 #chkHideTaskView
 #
+$chkHideTaskView.ForeColor = [System.Drawing.Color]::Blue
 $chkHideTaskView.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]43))
 $chkHideTaskView.Name = [System.String]'chkHideTaskView'
 $chkHideTaskView.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]136,[System.Int32]17))
@@ -601,17 +529,9 @@ $chkHideTaskView.Text = [System.String]'Hide Task View button'
 $chkHideTaskView.UseCompatibleTextRendering = $true
 $chkHideTaskView.UseVisualStyleBackColor = $true
 #
-#lblControlPanelView
-#
-$lblControlPanelView.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]8,[System.Int32]199))
-$lblControlPanelView.Name = [System.String]'lblControlPanelView'
-$lblControlPanelView.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]102,[System.Int32]17))
-$lblControlPanelView.TabIndex = [System.Int32]12
-$lblControlPanelView.Text = [System.String]'Control Panel view:'
-$lblControlPanelView.TextAlign = [System.Drawing.ContentAlignment]::MiddleLeft
-#
 #chkHidePeople
 #
+$chkHidePeople.ForeColor = [System.Drawing.Color]::Blue
 $chkHidePeople.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]20))
 $chkHidePeople.Name = [System.String]'chkHidePeople'
 $chkHidePeople.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]119,[System.Int32]17))
@@ -620,21 +540,11 @@ $chkHidePeople.Text = [System.String]'Hide People button'
 $chkHidePeople.UseCompatibleTextRendering = $true
 $chkHidePeople.UseVisualStyleBackColor = $true
 #
-#chkDisableSmartScreen
-#
-$chkDisableSmartScreen.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]134))
-$chkDisableSmartScreen.Name = [System.String]'chkDisableSmartScreen'
-$chkDisableSmartScreen.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]136,[System.Int32]17))
-$chkDisableSmartScreen.TabIndex = [System.Int32]16
-$chkDisableSmartScreen.Text = [System.String]'Disable SmartScreen'
-$chkDisableSmartScreen.UseCompatibleTextRendering = $true
-$chkDisableSmartScreen.UseVisualStyleBackColor = $true
-#
 #tabControl
 #
 $tabControl.Controls.Add($tabComputer)
-$tabControl.Controls.Add($tabWindows)
-$tabControl.Controls.Add($tabSecurity)
+$tabControl.Controls.Add($tabShellUI)
+$tabControl.Controls.Add($tabSystem)
 $tabControl.Controls.Add($tabNetworking)
 $tabControl.Controls.Add($tabWebBrowser)
 $tabControl.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]12,[System.Int32]33))
@@ -730,6 +640,179 @@ $tbxComputerName.Name = [System.String]'tbxComputerName'
 $tbxComputerName.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]217,[System.Int32]20))
 $tbxComputerName.TabIndex = [System.Int32]12
 #
+#tabSystem
+#
+$tabSystem.Controls.Add($chkLockWindowsUpdate)
+$tabSystem.Controls.Add($checkBox3)
+$tabSystem.Controls.Add($checkBox1)
+$tabSystem.Controls.Add($checkBox4)
+$tabSystem.Controls.Add($chkDisableUACPrompt)
+$tabSystem.Controls.Add($chkDisableSmartScreen)
+$tabSystem.Controls.Add($chkDisableDefender)
+$tabSystem.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]4,[System.Int32]22))
+$tabSystem.Name = [System.String]'tabSystem'
+$tabSystem.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]537,[System.Int32]436))
+$tabSystem.TabIndex = [System.Int32]6
+$tabSystem.Text = [System.String]'System'
+$tabSystem.UseVisualStyleBackColor = $true
+#
+#chkDisableUACPrompt
+#
+$chkDisableUACPrompt.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]28,[System.Int32]88))
+$chkDisableUACPrompt.Name = [System.String]'chkDisableUACPrompt'
+$chkDisableUACPrompt.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
+$chkDisableUACPrompt.TabIndex = [System.Int32]21
+$chkDisableUACPrompt.Text = [System.String]'Disable UAC prompts'
+$chkDisableUACPrompt.UseCompatibleTextRendering = $true
+$chkDisableUACPrompt.UseVisualStyleBackColor = $true
+#
+#chkDisableSmartScreen
+#
+$chkDisableSmartScreen.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]28,[System.Int32]53))
+$chkDisableSmartScreen.Name = [System.String]'chkDisableSmartScreen'
+$chkDisableSmartScreen.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]136,[System.Int32]17))
+$chkDisableSmartScreen.TabIndex = [System.Int32]20
+$chkDisableSmartScreen.Text = [System.String]'Disable SmartScreen'
+$chkDisableSmartScreen.UseCompatibleTextRendering = $true
+$chkDisableSmartScreen.UseVisualStyleBackColor = $true
+#
+#chkDisableDefender
+#
+$chkDisableDefender.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]28,[System.Int32]30))
+$chkDisableDefender.Name = [System.String]'chkDisableDefender'
+$chkDisableDefender.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
+$chkDisableDefender.TabIndex = [System.Int32]19
+$chkDisableDefender.Text = [System.String]'Disable Defender'
+$chkDisableDefender.UseCompatibleTextRendering = $true
+$chkDisableDefender.UseVisualStyleBackColor = $true
+#
+#checkBox4
+#
+$checkBox4.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]228,[System.Int32]30))
+$checkBox4.Name = [System.String]'checkBox4'
+$checkBox4.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
+$checkBox4.TabIndex = [System.Int32]22
+$checkBox4.Text = [System.String]'Disable private firewall'
+$checkBox4.UseCompatibleTextRendering = $true
+$checkBox4.UseVisualStyleBackColor = $true
+#
+#checkBox1
+#
+$checkBox1.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]28,[System.Int32]183))
+$checkBox1.Name = [System.String]'checkBox1'
+$checkBox1.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]160,[System.Int32]17))
+$checkBox1.TabIndex = [System.Int32]23
+$checkBox1.Text = [System.String]'Disable Cortana'
+$checkBox1.UseCompatibleTextRendering = $true
+$checkBox1.UseVisualStyleBackColor = $true
+#
+#checkBox3
+#
+$checkBox3.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]228,[System.Int32]88))
+$checkBox3.Name = [System.String]'checkBox3'
+$checkBox3.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]290,[System.Int32]17))
+$checkBox3.TabIndex = [System.Int32]24
+$checkBox3.Text = [System.String]'Disable automatic network-connected device setup'
+$checkBox3.UseCompatibleTextRendering = $true
+$checkBox3.UseVisualStyleBackColor = $true
+#
+#cmbControlPanelView
+#
+$cmbControlPanelView.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
+$cmbControlPanelView.FormattingEnabled = $true
+$cmbControlPanelView.Items.AddRange([System.Object[]]@([System.String]'Large icons',[System.String]'Small icons'))
+$cmbControlPanelView.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]116,[System.Int32]55))
+$cmbControlPanelView.Name = [System.String]'cmbControlPanelView'
+$cmbControlPanelView.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]216,[System.Int32]21))
+$cmbControlPanelView.TabIndex = [System.Int32]16
+#
+#lblControlPanelView
+#
+$lblControlPanelView.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]8,[System.Int32]55))
+$lblControlPanelView.Name = [System.String]'lblControlPanelView'
+$lblControlPanelView.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]102,[System.Int32]17))
+$lblControlPanelView.TabIndex = [System.Int32]17
+$lblControlPanelView.Text = [System.String]'Control Panel view:'
+$lblControlPanelView.TextAlign = [System.Drawing.ContentAlignment]::MiddleLeft
+#
+#chkLockWindowsUpdate
+#
+$chkLockWindowsUpdate.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]28,[System.Int32]124))
+$chkLockWindowsUpdate.Name = [System.String]'chkLockWindowsUpdate'
+$chkLockWindowsUpdate.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]136,[System.Int32]17))
+$chkLockWindowsUpdate.TabIndex = [System.Int32]25
+$chkLockWindowsUpdate.Text = [System.String]'Lock Windows Update'
+$chkLockWindowsUpdate.UseCompatibleTextRendering = $true
+$chkLockWindowsUpdate.UseVisualStyleBackColor = $true
+#
+#gbxExplorer
+#
+$gbxExplorer.Controls.Add($cmbControlPanelView)
+$gbxExplorer.Controls.Add($lblControlPanelView)
+$gbxExplorer.Controls.Add($lblComputerLabel)
+$gbxExplorer.Controls.Add($cmbComputerLabel)
+$gbxExplorer.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]6))
+$gbxExplorer.Name = [System.String]'gbxExplorer'
+$gbxExplorer.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]525,[System.Int32]93))
+$gbxExplorer.TabIndex = [System.Int32]20
+$gbxExplorer.TabStop = $false
+$gbxExplorer.Text = [System.String]'Explorer'
+#
+#gbxDesktop
+#
+$gbxDesktop.Controls.Add($chkShowRecycleBinOnDesktop)
+$gbxDesktop.Controls.Add($chkShowUserFolderOnDesktop)
+$gbxDesktop.Controls.Add($chkShowComputerOnDesktop)
+$gbxDesktop.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]6,[System.Int32]311))
+$gbxDesktop.Name = [System.String]'gbxDesktop'
+$gbxDesktop.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]522,[System.Int32]95))
+$gbxDesktop.TabIndex = [System.Int32]21
+$gbxDesktop.TabStop = $false
+$gbxDesktop.Text = [System.String]'Desktop'
+#
+#chkShowComputerOnDesktop
+#
+$chkShowComputerOnDesktop.ForeColor = [System.Drawing.Color]::Blue
+$chkShowComputerOnDesktop.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]10,[System.Int32]19))
+$chkShowComputerOnDesktop.Name = [System.String]'chkShowComputerOnDesktop'
+$chkShowComputerOnDesktop.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]175,[System.Int32]17))
+$chkShowComputerOnDesktop.TabIndex = [System.Int32]20
+$chkShowComputerOnDesktop.Text = [System.String]'Show Computer on Desktop'
+$chkShowComputerOnDesktop.UseCompatibleTextRendering = $true
+$chkShowComputerOnDesktop.UseVisualStyleBackColor = $true
+#
+#chkShowUserFolderOnDesktop
+#
+$chkShowUserFolderOnDesktop.ForeColor = [System.Drawing.Color]::Blue
+$chkShowUserFolderOnDesktop.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]10,[System.Int32]42))
+$chkShowUserFolderOnDesktop.Name = [System.String]'chkShowUserFolderOnDesktop'
+$chkShowUserFolderOnDesktop.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]175,[System.Int32]17))
+$chkShowUserFolderOnDesktop.TabIndex = [System.Int32]21
+$chkShowUserFolderOnDesktop.Text = [System.String]'Show User Folder on Desktop'
+$chkShowUserFolderOnDesktop.UseCompatibleTextRendering = $true
+$chkShowUserFolderOnDesktop.UseVisualStyleBackColor = $true
+#
+#chkShowRecycleBinOnDesktop
+#
+$chkShowRecycleBinOnDesktop.ForeColor = [System.Drawing.Color]::Blue
+$chkShowRecycleBinOnDesktop.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]10,[System.Int32]65))
+$chkShowRecycleBinOnDesktop.Name = [System.String]'chkShowRecycleBinOnDesktop'
+$chkShowRecycleBinOnDesktop.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]175,[System.Int32]17))
+$chkShowRecycleBinOnDesktop.TabIndex = [System.Int32]22
+$chkShowRecycleBinOnDesktop.Text = [System.String]'Show Recycle Bin on Desktop'
+$chkShowRecycleBinOnDesktop.UseCompatibleTextRendering = $true
+$chkShowRecycleBinOnDesktop.UseVisualStyleBackColor = $true
+#
+#chkClearTaskbarPins
+#
+$chkClearTaskbarPins.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]197,[System.Int32]19))
+$chkClearTaskbarPins.Name = [System.String]'chkClearTaskbarPins'
+$chkClearTaskbarPins.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]162,[System.Int32]17))
+$chkClearTaskbarPins.TabIndex = [System.Int32]20
+$chkClearTaskbarPins.Text = [System.String]'Clear default pinned items'
+$chkClearTaskbarPins.UseCompatibleTextRendering = $true
+$chkClearTaskbarPins.UseVisualStyleBackColor = $true
+#
 #frmMain
 #
 $frmMain.ClientSize = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]568,[System.Int32]535))
@@ -749,13 +832,15 @@ $menuStrip1.PerformLayout()
 $tabWebBrowser.ResumeLayout($false)
 $gbxEdge.ResumeLayout($false)
 $gbxInternetExplorer.ResumeLayout($false)
-$tabWindows.ResumeLayout($false)
-$groupBox2.ResumeLayout($false)
+$tabShellUI.ResumeLayout($false)
 $groupBox1.ResumeLayout($false)
 $tabControl.ResumeLayout($false)
 $tabComputer.ResumeLayout($false)
 $tabComputer.PerformLayout()
 $gbxLockWindowsUpdate.ResumeLayout($false)
+$tabSystem.ResumeLayout($false)
+$gbxExplorer.ResumeLayout($false)
+$gbxDesktop.ResumeLayout($false)
 $frmMain.ResumeLayout($false)
 $frmMain.PerformLayout()
 Add-Member -InputObject $frmMain -Name base -Value $base -MemberType NoteProperty
@@ -776,20 +861,12 @@ Add-Member -InputObject $frmMain -Name btnExport -Value $btnExport -MemberType N
 Add-Member -InputObject $frmMain -Name openScriptToolStripMenuItem -Value $openScriptToolStripMenuItem -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name tabWebBrowser -Value $tabWebBrowser -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name tabNetworking -Value $tabNetworking -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name tabSecurity -Value $tabSecurity -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name tabWindows -Value $tabWindows -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name groupBox2 -Value $groupBox2 -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name cmbComputerLabel -Value $cmbComputerLabel -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name lblComputerLabel -Value $lblComputerLabel -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name cmbControlPanelView -Value $cmbControlPanelView -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name lblControlPanelView -Value $lblControlPanelView -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name groupBox1 -Value $groupBox1 -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name chkDisableDefender -Value $chkDisableDefender -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name chkDisableUACPrompt -Value $chkDisableUACPrompt -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name chkLockWindowsUpdate -Value $chkLockWindowsUpdate -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name chkHideTaskView -Value $chkHideTaskView -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name chkHidePeople -Value $chkHidePeople -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name chkDisableSmartScreen -Value $chkDisableSmartScreen -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name tabControl -Value $tabControl -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name gbxInternetExplorer -Value $gbxInternetExplorer -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name gbxChrome -Value $gbxChrome -MemberType NoteProperty
@@ -801,10 +878,7 @@ Add-Member -InputObject $frmMain -Name textBox1 -Value $textBox1 -MemberType Not
 Add-Member -InputObject $frmMain -Name lblComputerName -Value $lblComputerName -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name tbxComputerName -Value $tbxComputerName -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name label1 -Value $label1 -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name checkBox4 -Value $checkBox4 -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name checkBox3 -Value $checkBox3 -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name checkBox2 -Value $checkBox2 -MemberType NoteProperty
-Add-Member -InputObject $frmMain -Name checkBox1 -Value $checkBox1 -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name label2 -Value $label2 -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name chkDisableIEPasswordAutoComplete -Value $chkDisableIEPasswordAutoComplete -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name chkDisableIEFirstRunWizard -Value $chkDisableIEFirstRunWizard -MemberType NoteProperty
@@ -819,6 +893,23 @@ Add-Member -InputObject $frmMain -Name chkLockIEToolbars -Value $chkLockIEToolba
 Add-Member -InputObject $frmMain -Name gbxLockWindowsUpdate -Value $gbxLockWindowsUpdate -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name rdoUnlockWindowsUpdate -Value $rdoUnlockWindowsUpdate -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name rdoLockWindowsUpdate -Value $rdoLockWindowsUpdate -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name tabShellUI -Value $tabShellUI -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name tabSystem -Value $tabSystem -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name gbxDesktop -Value $gbxDesktop -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkShowRecycleBinOnDesktop -Value $chkShowRecycleBinOnDesktop -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkShowUserFolderOnDesktop -Value $chkShowUserFolderOnDesktop -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkShowComputerOnDesktop -Value $chkShowComputerOnDesktop -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name gbxExplorer -Value $gbxExplorer -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name cmbControlPanelView -Value $cmbControlPanelView -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name lblControlPanelView -Value $lblControlPanelView -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkClearTaskbarPins -Value $chkClearTaskbarPins -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkLockWindowsUpdate -Value $chkLockWindowsUpdate -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name checkBox3 -Value $checkBox3 -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name checkBox1 -Value $checkBox1 -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name checkBox4 -Value $checkBox4 -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkDisableUACPrompt -Value $chkDisableUACPrompt -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkDisableSmartScreen -Value $chkDisableSmartScreen -MemberType NoteProperty
+Add-Member -InputObject $frmMain -Name chkDisableDefender -Value $chkDisableDefender -MemberType NoteProperty
 Add-Member -InputObject $frmMain -Name toolStripSeparator3 -Value $toolStripSeparator3 -MemberType NoteProperty
 }
 . InitializeComponent

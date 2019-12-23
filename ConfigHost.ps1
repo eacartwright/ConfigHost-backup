@@ -99,7 +99,7 @@ function EnablePrivilege {
   }
  }
 '@
-    $processHandle = (Get-Process -id $ProcessId).Handle
+    $processHandle = (Get-Process -Id $ProcessId).Handle
     $type = Add-Type $definition -PassThru
     $type[0]::EnablePrivilege($processHandle, $Privilege, $Disable)
 }
