@@ -2,7 +2,6 @@ function Function {
     param (
         $mode
     )
-
     $source = "[$($MyInvocation.MyCommand)]"
     LogMessage 6 $source $mode
 
@@ -11,19 +10,22 @@ function Function {
 
         }
         1 {
+            if (!(Test-Path '')) {
+                New-Item -Path '' -Force | Out-Null
+            }
 
         }
         '?' {
-            switch ((Get-ItemPropertyValue $source).Data) {
+            switch (Get-ItemPropertyValue -Path '' -Name '') {
                 1 {
-                    $script:FunctionVariable = 1
+                    $script:FunctionName = 1
                 }
                 default {
-                    $script:FunctionVariable = 0
+                    $script:FunctionName = 0
                 }
             }
-            LogMessage 6 $source $FunctionVariable
-            return $FunctionVariable
+            LogMessage 6 $source $FunctionName
+            return $FunctionName
         }
     }
 }
